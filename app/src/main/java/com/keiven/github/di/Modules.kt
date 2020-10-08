@@ -17,11 +17,5 @@ object Modules {
         single { GithubSource(get()) }
         single { MainRepository(get(), get()) }
         viewModel { MainViewModel(get()) }
-
-//        factory {
-//            val mapProvider = mutableMapOf<Class<out ViewModel>, ViewModel>()
-//            mapProvider.put(MainViewModel::class.java, MainViewModel(get()))
-//            ViewModelFactory(mapProvider)
-//        }
     }
 }
