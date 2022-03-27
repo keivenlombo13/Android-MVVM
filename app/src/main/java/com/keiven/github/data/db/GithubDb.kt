@@ -5,11 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.keiven.github.data.db.dao.UserDao
-import com.keiven.github.data.db.entity.User
+import com.keiven.github.data.db.dao.UserRemoteKeysDao
+import com.keiven.github.data.db.entity.Users
 
 @Database(
     entities = [
-        User::class
+        Users.User::class,
+        Users.UserRemoteKeys::class
     ],
     version = 1,
     exportSchema = false
@@ -17,6 +19,7 @@ import com.keiven.github.data.db.entity.User
 abstract class GithubDb : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+    abstract fun userRemoteDao(): UserRemoteKeysDao
 
     companion object {
         @Volatile private var instance: GithubDb? = null

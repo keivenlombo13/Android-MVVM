@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/srlMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <variable
-            name="viewmodel"
-            type="com.keiven.github.ui.MainViewModel" />
-    </data>
-
     <RelativeLayout
         android:id="@+id/rlContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:orientation="vertical">
         <LinearLayout
             android:id="@+id/llHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary">
             <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:layout_margin="16dp"
-                app:onTextSubmitted="@{viewmodel.querySubmitListener}"
                 app:queryHint="Search Github users"
                 app:defaultQueryHint="Search Github users"
                 app:iconifiedByDefault="false"
@@ -52,4 +48,4 @@
             android:layout_marginBottom="20dp"/>
 
     </RelativeLayout>
-</layout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
